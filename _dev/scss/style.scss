@@ -1,13 +1,204 @@
-.red {
-    color: rgba(245, 20, 0, 0.798);
+@use './_base/' as *;
+@use './_foundation/' as *;
+@use './_mlc/' as *;
+
+.body {
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
-.blue {
-    color: #007bff;
-    font-weight: bold;
+.header {
+    background-color: var(--color_orange);
+    height: 38px;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+
+    @include media-query {
+        height: 80px;
+        padding: 18px 40px;
+    }
+
+    &__image {
+        width: 18px;
+        height: 18px;
+
+        @include media-query {
+            width: 46px;
+            height: 46px;
+        }
+    }
+
+    &__text {
+        font-size: px-to-rem(12);
+        font-weight: bold;
+        color: var(--color_white);
+
+        @include media-query {
+            font-size: px-to-rem(36);
+        }
+    }
 }
 
-.green {
-    color: #28a745;
-    font-size: 1.2em;
+.fv {
+    background-image: url(/images/kv_background.jpg);
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 360 / 246;
+    padding: 10px 20px;
+
+    @include media-query {
+        background-image: url(/images/kv_background_pc.jpg);
+        aspect-ratio: 1280 / 900;
+        padding: 40px;
+    }
+
+    &__textbox {
+        line-height: 1.3;
+
+        @include media-query {
+            padding-bottom: 40px;
+            line-height: 1.15;
+        }
+    }
+
+    &__text {
+        font-size: clamp( 24px, calc( -19.47826086956522px + 10.869565217391305vw ), 64px );
+        font-weight: 900;
+        color: var(--color_orange);
+        text-shadow: 1px 1px 0 var(--color_white);
+        
+        @include media-query {
+            font-size: clamp( 64px, calc( -39.111111111111114px + 13.425925925925927vw ), 122px );
+            text-shadow: 4px 4px 0 var(--color_white);
+        }
+    }
+
+    &__onlypc {
+        display: none;
+
+        @include media-query {
+            display: block;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+
+        @include media-query {
+            gap: 10px;
+        }
+    }
+
+    &__content-item {
+        width: max(16vw, 70px);
+        height: max(16vw, 70px);
+        background-color: var(--color_white);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        @include media-query {
+            width: min(16vw, 200px);
+            height: min(16vw, 200px);
+        }
+    }
+
+    &__content-text {
+        color: var(--color_orange);
+        font-weight: bold;
+        font-size: clamp( 12px, calc( -1.0434782608695645px + 3.260869565217391vw ), 24px );
+
+        @include media-query {
+            font-size: clamp( 24px, calc( 6px + 2.34375vw ), 36px );
+        }
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+        position: relative;
+
+        @include media-query {
+            justify-self: flex-end;
+            margin-top: 0;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: min(10vw, 142px);
+            height: min(10vw, 153px);
+            background-image: url(/images/kv_fukidashi_pc.png);
+            background-size: cover;
+            z-index: 1;
+            display: none;
+
+            @media screen and (min-width: 768px) {
+                display: block;
+                top: -20%;
+                left: -7%;  
+            }
+
+            @media screen and (min-width: 1050px) {
+                display: block;
+                top: -42%;
+                left: -10%;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -12px;
+            width: 55px;
+            height: 63px;
+            background-image: url(/images/kv_fukidashi.png);
+            background-size: cover;
+            z-index: 1;
+            display: block;
+
+            @include media-query {
+                display: none;
+            }
+        }
+    }
+
+    &__button-link {
+        display: block;
+        width: 100%;
+        background-color: var(--color_red);
+        border-radius: 6px;
+        text-align: center;
+        padding: 12px 0;
+
+        @include media-query {
+            border-radius: 16px;
+            padding: 53px 17px;
+            width: min(40vw, 520px);
+        }
+    }
+
+    &__button-text {
+        font-size: clamp( 24px, calc( -41px + 7.421875vw ), 54px );
+        font-weight: bold;
+        color: var(--color_white);
+    }
+}
+
+.section01 {
+    margin: 0 20px;
+
+    @include media-query {
+        margin: 0 171px;
+    }
 }
