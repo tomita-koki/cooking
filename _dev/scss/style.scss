@@ -7,6 +7,14 @@
     margin: 0 auto;
 }
 
+.onlyPc {
+    white-space: normal;
+  
+    @include media-query {
+      white-space: pre-line;
+    }
+  }
+
 .header {
     background-color: var(--color_orange);
     height: 38px;
@@ -200,5 +208,322 @@
 
     @include media-query {
         margin: 0 171px;
+    }
+}
+
+.hedding-02 {
+    margin-top: 40px;
+    text-align: center;
+
+    @include media-query {
+        margin-top: 80px;
+    }
+
+    &__title {
+        font-size: px-to-rem(24);
+
+        @include media-query {
+            font-size: px-to-rem(36); 
+        }
+    }
+
+    &__subtitle {
+        font-family: "Chilanka", cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: px-to-rem(16);
+        color: var(--color_red);
+        margin-bottom: 4px;
+
+        @include media-query {
+            margin-bottom: 10px;
+            font-size: px-to-rem(24);
+        }
+    }
+}
+
+.textArea {
+    margin-top: 40px;
+    text-align: left;
+    font-size: px-to-rem(16);
+    font-weight: bold;
+
+    @include media-query {
+        margin-top: 60px;
+        text-align: center;
+    }
+
+    &__text02 {
+        margin-top: 20px;
+    }
+}
+
+.video {
+    margin-top: 40px;
+
+    @include media-query {
+        margin-top: 60px;
+    }
+
+    &__inner {
+        background-color: var(--color_gray);
+        width: 100%;
+        aspect-ratio: 200 / 100;
+
+        @include media-query {
+            
+        }
+    }
+
+    &__text {
+        font-size: px-to-rem(24);
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+.introduce {
+    margin-top: 40px;
+
+    @include media-query {
+        margin-top: 60px;
+    }
+
+    &__inner {
+        // display: flex;
+        // flex-direction: column;
+        // gap: 40px;
+
+        // @include media-query {
+        //     gap: 80px;
+        // }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        @media screen and (min-width: 900px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__image {
+        width: 122px;
+        height: 254px;
+        min-width: 122px;
+        min-height: 254px;
+
+        @media screen and (min-width: 900px) {
+            width: 270px;
+            height: 560px;
+            min-width: 270px;
+            min-height: 560px;
+        }
+    }
+
+    &__content {
+        background-color: var(--color_beige);
+        padding: 212px 30px 30px;
+        margin: -194px 0 0;
+        width: 100%;
+        position: relative;
+        z-index: -1;
+
+        @media screen and (min-width: 900px) {
+            margin: 100px 0 144px;
+            padding: 50px 30px 30px;
+        }
+    }
+
+    &__subtitle {
+        font-family: "Chilanka", cursive;
+        font-size: px-to-rem(24);
+        font-weight: bold;
+        color: var(--color_red);
+        position: absolute;
+        top: 210px;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+
+        @media screen and (min-width: 900px) {
+            font-size: px-to-rem(54);
+            top: -27px;
+        }
+    }
+
+    &__title {
+        font-size: px-to-rem(16);
+        font-weight: bold;
+        text-align: center;
+        margin-top: 28px;
+
+        @media screen and (min-width: 900px) {
+            font-size: px-to-rem(24);
+            text-align: left;
+            margin-top: 0;
+            white-space: normal;
+            white-space: pre-line;
+        }
+    }
+
+    &__textArea {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        @media screen and (min-width: 900px) {
+            margin-top: 20px;
+            gap: 24px;
+        }
+    }
+
+    &+.introduce {
+        margin-top: 40px;
+
+        @include media-query {
+            margin-top: 80px;
+        }
+    }
+
+    &--type2 {
+        .introduce__item {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+    
+            @media screen and (min-width: 900px) {
+                flex-direction: row-reverse;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+.btn {
+    margin-top: 40px;
+    text-align: center;
+
+    @include media-query {
+        margin-top: 60px;
+    }
+
+    &__inner {
+        padding: 20px 52px;
+        border-radius: 40px;
+        background-color: var(--color_red);
+        max-width: 320px;
+        width: 100%;
+        margin: 0 auto;
+
+        @include media-query {
+            padding: 20px 174px;
+            max-width: 564px;
+        }
+    }
+
+    &__text {
+        font-size: px-to-rem(24);
+        color: var(--color_white);
+        font-weight: bold;
+    }
+}
+
+.section02 {
+    background-color: var(--color_beige);
+    margin-top: 16px;
+    padding-bottom: 40px;
+
+    @include media-query {
+        margin-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    &::before {
+        content: "";
+        background-color: var(--color_white);
+        display: inline-block;
+        width: 100%;
+        height: 60px;
+        clip-path: polygon(50% 60px, 0% 0%, 100% 0%);
+
+        @include media-query {
+            height: 160px;
+            clip-path: polygon(50% 160px, 0% 0%, 100% 0%);
+        }
+    }
+}
+
+.section03 {
+    background-color: var(--color_white);
+
+    &::before,
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 60px;
+        clip-path: polygon(50% 60px, 0% 0%, 100% 0%);
+
+        @include media-query {
+            height: 160px;
+            clip-path: polygon(50% 160px, 0% 0%, 100% 0%);
+        }
+    }
+
+    &::before {
+        background-color: var(--color_beige);
+    }
+}
+
+.dish {
+    margin: 40px 20px 0;
+
+    @include media-query {
+        margin: 60px 100px 0;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+
+        @include media-query {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 72px 30px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        @include media-query {
+            gap: 20px;
+        }
+    }
+
+    &__image {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+        min-height: 120px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        text-align: center;
+        color: var(--color_red);
+        font-weight: bold;
+        font-size: px-to-rem(16);
+
+        @include media-query {
+            font-size: px-to-rem(24);
+        }
     }
 }
