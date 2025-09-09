@@ -9,6 +9,7 @@
   --color_red: #E42515;
   --color_gray: #CCCCCC;
   --color_black: #000;
+  --color_green: #26B568;
   /* width */
   --FONT_SIZE: px-to-rem(16);
   /* width */
@@ -1488,6 +1489,17 @@ li {
   color: var(--color_white);
   font-weight: bold;
 }
+.btn--type02 {
+  margin-top: 10px;
+}
+@media screen and (min-width: 768px) {
+  .btn--type02 {
+    margin-top: 20px;
+  }
+}
+.btn--type02 .btn__inner {
+  background-color: var(--color_green);
+}
 
 .section02 {
   background-color: var(--color_beige);
@@ -1614,6 +1626,16 @@ li {
     height: 160px;
     clip-path: polygon(50% 160px, 0% 0%, 100% 0%);
   }
+}
+
+.section07 {
+  background-color: var(--color_orange);
+  padding: 20px;
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  display: inline-block;
+  width: 100%;
 }
 
 .dish {
@@ -1994,24 +2016,48 @@ li {
   margin-bottom: 0;
 }
 
-.lp_form {
+.form {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  width: 100%;
+  margin: 40px 20px 0;
 }
-.lp_form .field {
-  width: 100%;
+@media screen and (min-width: 768px) {
+  .form {
+    max-width: 600px;
+    width: 100%;
+    margin: 60px auto 0;
+  }
 }
-.lp_form .field_name {
+.form__field {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+@media screen and (min-width: 768px) {
+  .form__field {
+    gap: 20px;
+  }
+}
+.form__title {
+  display: flex;
+  flex-direction: row;
   gap: 8px;
 }
-.lp_form .field_name::after {
-  content: "";
-  background-color: var(--color-red);
-  color: var(--color-white);
+.form__name {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+}
+@media screen and (min-width: 768px) {
+  .form__name {
+    font-size: 1.5rem;
+  }
+}
+.form__tag {
+  background-color: var(--color_red);
+  color: var(--color_white);
   padding: 4px;
   border-radius: 8px;
   font-size: 1rem;
@@ -2022,13 +2068,260 @@ li {
   justify-content: center;
   letter-spacing: 1px;
 }
-.lp_form .input_text {
+.form__text {
   padding: 17px 10px;
   border: none;
   background-color: var(--color_white);
   border-radius: 8px;
 }
-.lp_form .field_input {
-  margin-top: 10px;
+@media screen and (min-width: 768px) {
+  .form__text {
+    padding: 28px;
+    border-radius: 16px;
+  }
+}
+.form__radio {
+  display: flex;
+  gap: 10px;
+  font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .form__radio {
+    font-size: 1.5rem;
+  }
+}
+.form__age {
+  position: relative;
+}
+.form__age::after {
+  content: "";
+  background-image: url(/images/selectbox_icon.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+@media screen and (min-width: 768px) {
+  .form__age::after {
+    right: 50%;
+  }
+}
+.form__age_inner {
+  padding: 17px 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
   width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .form__age_inner {
+    padding: 28px 30px;
+    font-size: 1.5rem;
+    max-width: 300px;
+    width: 100%;
+  }
+}
+.form__checkbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .form__checkbox {
+    font-size: 1.5rem;
+  }
+}
+.form__textarea {
+  border: none;
+  background-color: var(--color_white);
+  border-radius: 8px;
+  color: var(--color_gray);
+  padding: 14px 10px;
+}
+@media screen and (min-width: 768px) {
+  .form__textarea {
+    border-radius: 16px;
+    padding: 20px;
+  }
+}
+.form__agreement {
+  padding-top: 10px;
+}
+@media screen and (min-width: 768px) {
+  .form__agreement {
+    padding-top: 30px;
+  }
+}
+.form__agreementText {
+  font-size: 0.75rem;
+}
+@media screen and (min-width: 768px) {
+  .form__agreementText {
+    font-size: 1rem;
+  }
+}
+.form__strongText {
+  color: var(--color_red);
+}
+
+.apply {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+@media screen and (min-width: 1100px) {
+  .apply {
+    flex-direction: row;
+    gap: 50px;
+  }
+}
+.apply__button-call {
+  display: none;
+}
+@media screen and (min-width: 1100px) {
+  .apply__button-call {
+    display: block;
+    border-top: 4px var(--color_white) solid;
+    border-bottom: 4px var(--color_white) solid;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    position: relative;
+  }
+  .apply__button-call::before {
+    content: "";
+    background-image: url(/images/telephone_icon_pc.svg);
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+@media screen and (min-width: 1100px) {
+  .apply__button-callNumber {
+    color: var(--color_white);
+    font-weight: bold;
+    font-size: 2.25rem;
+    white-space: nowrap;
+    margin-left: 50px;
+    line-height: 2;
+  }
+}
+.apply__button-callTxet {
+  color: var(--color_white);
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  line-height: 2;
+}
+.apply__button-link {
+  display: block;
+  width: 100%;
+  background-color: var(--color_red);
+  border-radius: 16px;
+  text-align: center;
+  padding: 28px 0;
+  font-size: 1.5rem;
+  position: relative;
+}
+@media screen and (min-width: 1100px) {
+  .apply__button-link {
+    padding: 25px 10px;
+    font-size: 1.75rem;
+  }
+}
+.apply__button-link::before {
+  content: "";
+  position: absolute;
+  width: min(10vw, 142px);
+  height: min(10vw, 153px);
+  background-image: url(/images/kv_fukidashi_pc.png);
+  background-size: cover;
+  z-index: 1;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .apply__button-link::before {
+    width: min(10vw, 111px);
+    height: min(10vw, 120px);
+    display: block;
+    top: -66%;
+    left: 0;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .apply__button-link::before {
+    width: min(10vw, 111px);
+    height: min(10vw, 120px);
+    display: block;
+    top: -42%;
+    left: -10%;
+  }
+}
+.apply__button-link::after {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: -12px;
+  width: 60px;
+  height: 68px;
+  background-image: url(/images/footer_fukidashi.png);
+  background-size: cover;
+  z-index: 1;
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .apply__button-link::after {
+    display: none;
+  }
+}
+.apply__button-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--color_white);
+}
+@media screen and (min-width: 1100px) {
+  .apply__button-text {
+    font-size: 2.25rem;
+  }
+}
+.apply__button-link.apply__button-link--call {
+  background-color: var(--color_white);
+}
+@media screen and (min-width: 1100px) {
+  .apply__button-link.apply__button-link--call {
+    display: none;
+  }
+}
+.apply__button-link.apply__button-link--call::before, .apply__button-link.apply__button-link--call::after {
+  content: "";
+  display: none;
+}
+.apply__button-text.apply__button-text--call {
+  color: var(--color_orange);
+}
+@media screen and (min-width: 1100px) {
+  .apply__button-text.apply__button-text--call {
+    display: none;
+  }
+}
+.apply__date {
+  text-align: center;
+  color: var(--color_white);
+  font-weight: bold;
+}
+@media screen and (min-width: 1100px) {
+  .apply__date {
+    display: none;
+  }
 }

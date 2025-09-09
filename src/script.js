@@ -19,20 +19,18 @@ const options = {
 const splide = new Splide(".splide", options);
 splide.mount(window.splide.Extensions);
 
-
-new Splide('.multi-splide', {
-  type: 'loop',
+new Splide(".multi-splide", {
+  type: "loop",
   perPage: 2,
   perMove: 1,
   gap: 20,
   pagination: false,
   breakpoints: {
-      768: {
-          perPage: 1,
-      },
-  }
+    768: {
+      perPage: 1,
+    },
+  },
 }).mount();
-
 
 // -----------------------------------------
 // アコーディオン（アニメーション）
@@ -67,7 +65,10 @@ const setUpAccordion = () => {
         element.classList.toggle(IS_OPENED_CLASS);
 
         // アニメーションを実行
-        const closingAnim = content.animate(closingAnimKeyframes(content), animTiming);
+        const closingAnim = content.animate(
+          closingAnimKeyframes(content),
+          animTiming
+        );
         // アニメーション実行中用の値を付与
         element.dataset.animStatus = RUNNING_VALUE;
 
@@ -87,7 +88,10 @@ const setUpAccordion = () => {
         element.classList.toggle(IS_OPENED_CLASS);
 
         // アニメーションを実行
-        const openingAnim = content.animate(openingAnimKeyframes(content), animTiming);
+        const openingAnim = content.animate(
+          openingAnimKeyframes(content),
+          animTiming
+        );
         // アニメーション実行中用の値を入れる
         element.dataset.animStatus = RUNNING_VALUE;
 
@@ -98,29 +102,35 @@ const setUpAccordion = () => {
       }
     });
   });
-}
+};
 
 const animTiming = {
   duration: 400,
-  easing: "ease-out"
+  easing: "ease-out",
 };
 
 const closingAnimKeyframes = (content) => [
   {
-    height: content.offsetHeight + 'px', // height: "auto"だとうまく計算されないため要素の高さを指定する
+    height: content.offsetHeight + "px", // height: "auto"だとうまく計算されないため要素の高さを指定する
     opacity: 1,
-  }, {
+  },
+  {
     height: 0,
     opacity: 0,
-  }
+  },
 ];
 
 const openingAnimKeyframes = (content) => [
   {
     height: 0,
     opacity: 0,
-  }, {
-    height: content.offsetHeight + 'px',
+  },
+  {
+    height: content.offsetHeight + "px",
     opacity: 1,
-  }
+  },
 ];
+
+const hello = "heii";
+{
+}
