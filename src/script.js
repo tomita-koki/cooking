@@ -1,36 +1,52 @@
+// -----------------------------------------
+// 無限ループスライダー
+// -----------------------------------------
 const options = {
-  type: "loop", // ループさせる
-  arrows: false, // 矢印ボタンを非表示
-  pagination: false, // ページネーションを非表示
-  drag: "free", // フリードラッグモード
-  gap: 40, // スライド間の余白（スマートフォン）
-  perPage: 3, // 表示するスライドの枚数
+  type: "loop",
+  arrows: false,
+  pagination: false,
+  drag: "free",
+  perPage: 2,
+  gap: 20,
+  autoScroll: {
+    speed: 0.5,
+    pauseOnHover: true,
+  },
   breakpoints: {
     768: {
       perPage: 1,
-      gap: 10, // 画面幅768px以上でスライド間の余白40px
+      gap: 10,
     },
-  },
-  autoScroll: {
-    speed: 0.5, // スクロール速度
-    pauseOnHover: true, // カーソルが乗ってもスクロールを停止させない
   },
 };
 const splide = new Splide(".splide", options);
 splide.mount(window.splide.Extensions);
 
-new Splide(".multi-splide", {
+// -----------------------------------------
+// スライダー
+// -----------------------------------------
+const multioptions = {
   type: "loop",
   perPage: 2,
   perMove: 1,
   gap: 20,
-  pagination: false,
+  pagination: true,
+  arrows: false,
   breakpoints: {
-    768: {
-      perPage: 1,
-    },
+    900: { perPage: 1 },
   },
-}).mount();
+};
+const multiSplide = new Splide(".multi-splide", multioptions);
+multiSplide.mount();
+
+const multiWrapper = document.querySelector(".multi-splide");
+multiWrapper.querySelector(".splide__prev").addEventListener("click", () => {
+  multiSplide.go("<");
+});
+
+multiWrapper.querySelector(".splide__next").addEventListener("click", () => {
+  multiSplide.go(">");
+});
 
 // -----------------------------------------
 // アコーディオン（アニメーション）
@@ -111,7 +127,7 @@ const animTiming = {
 
 const closingAnimKeyframes = (content) => [
   {
-    height: content.offsetHeight + "px", // height: "auto"だとうまく計算されないため要素の高さを指定する
+    height: content.offsetHeight + "px",
     opacity: 1,
   },
   {
@@ -130,7 +146,3 @@ const openingAnimKeyframes = (content) => [
     opacity: 1,
   },
 ];
-
-const hello = "heii";
-{
-}
