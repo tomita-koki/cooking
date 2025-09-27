@@ -550,7 +550,7 @@ li {
   right: 50%;
   bottom: -15%;
   transform: translateX(50%) rotate(0deg);
-  background-image: url(/images/icon-triangle.png);
+  background-image: url("images/icon-triangle.png");
   background-repeat: no-repeat;
 }
 @media screen and (min-width: 768px) {
@@ -1127,7 +1127,7 @@ li {
 }
 
 .fv {
-  background-image: url(/images/kv_background.jpg);
+  background-image: url("images/kv_background.jpg");
   position: relative;
   background-repeat: no-repeat;
   background-position: center;
@@ -1138,7 +1138,7 @@ li {
 }
 @media screen and (min-width: 768px) {
   .fv {
-    background-image: url(/images/kv_background_pc.jpg);
+    background-image: url("images/kv_background_pc.jpg");
     aspect-ratio: 1280/900;
     padding: 40px;
   }
@@ -1226,7 +1226,7 @@ li {
   position: absolute;
   width: min(10vw, 142px);
   height: min(10vw, 153px);
-  background-image: url(/images/kv_fukidashi_pc.png);
+  background-image: url("images/kv_fukidashi_pc.png");
   background-size: cover;
   z-index: 1;
   display: none;
@@ -1252,7 +1252,7 @@ li {
   right: -12px;
   width: 55px;
   height: 63px;
-  background-image: url(/images/kv_fukidashi.png);
+  background-image: url("images/kv_fukidashi.png");
   background-size: cover;
   z-index: 1;
   display: block;
@@ -1816,11 +1816,11 @@ li {
   }
 }
 .price__iconlistCheck::before {
-  background-image: url(/images/check_icon.svg);
+  background-image: url("images/check_icon.svg");
   background-repeat: no-repeat;
 }
 .price__iconlistWarnning::before {
-  background-image: url(/images/warning_icon.svg);
+  background-image: url("images/warning_icon.svg");
   background-repeat: no-repeat;
 }
 .price__title {
@@ -1912,17 +1912,17 @@ li {
 .price__tableBody--circle::after,
 .price__tableBody2--circle::after {
   content: "";
-  background-image: url(/images/table_symbol_circle.svg);
+  background-image: url("images/table_symbol_circle.svg");
 }
 .price__tableBody--triangle::after,
 .price__tableBody2--triangle::after {
   content: "";
-  background-image: url(/images/table_symbol_triangle.svg);
+  background-image: url("images/table_symbol_triangle.svg");
 }
 .price__tableBody--cross::after,
 .price__tableBody2--cross::after {
   content: "";
-  background-image: url(/images/table_symbol_cross.svg);
+  background-image: url("images/table_symbol_cross.svg");
 }
 .price__tableBody2::before {
   background-color: var(--color_offWhite);
@@ -2279,7 +2279,7 @@ li {
 }
 .form__age::after {
   content: "";
-  background-image: url(/images/selectbox_icon.svg);
+  background-image: url("images/selectbox_icon.svg");
   background-repeat: no-repeat;
   background-size: contain;
   width: 20px;
@@ -2382,7 +2382,7 @@ li {
   }
   .apply__button-call::before {
     content: "";
-    background-image: url(/images/telephone_icon_pc.svg);
+    background-image: url("images/telephone_icon_pc.svg");
     width: 40px;
     height: 40px;
     display: inline-block;
@@ -2429,7 +2429,7 @@ li {
   position: absolute;
   width: min(10vw, 142px);
   height: min(10vw, 153px);
-  background-image: url(/images/kv_fukidashi_pc.png);
+  background-image: url("images/kv_fukidashi_pc.png");
   background-size: cover;
   z-index: 1;
   display: none;
@@ -2459,7 +2459,7 @@ li {
   left: -12px;
   width: 60px;
   height: 68px;
-  background-image: url(/images/footer_fukidashi.png);
+  background-image: url("images/footer_fukidashi.png");
   background-size: cover;
   z-index: 1;
   display: block;
